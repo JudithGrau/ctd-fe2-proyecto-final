@@ -1,5 +1,5 @@
-import { API_URL } from "../../app/constants";
-import { ICita } from "./types";
+import { API_URL } from "../../../app/constants";
+import { ICita } from "../types";
 
 export const obtenerCita: (personaje?: string) => Promise<ICita> = async (
   personaje
@@ -11,7 +11,8 @@ export const obtenerCita: (personaje?: string) => Promise<ICita> = async (
   const url = personaje ? `${API_URL}?character=${personaje}` : API_URL;
   const respuesta = await fetch(url);
   const [data] = await respuesta.json();
-
+  console.log(data);
+  
   const dataNormalizada = {
     cita: data.quote,
     personaje: data.character,

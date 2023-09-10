@@ -4,6 +4,13 @@ import {
   MENSAJE_CARGANDO,
   NO_ENCONTRADO,
 } from "./constants";
+
+/**
+ * 
+ * @param cita cita del personaje
+ * @param estadoPedido estado del fetch
+ * @returns {String} si el estado del pedido es "CARGANDO" devuelve "MENSAJE_CARGANDO", si es "ERROR", devuelve "NOMBRE_INVALIDO" y si se encuentra el personaje, devuelve cita. Si no, retorna "NO_ENCONTRADO" 
+ */
 export const obtenerMensaje: (
   cita: string,
   estadoPedido: ESTADO_FETCH
@@ -11,18 +18,10 @@ export const obtenerMensaje: (
   if (estadoPedido === ESTADO_FETCH.CARGANDO) {
     return MENSAJE_CARGANDO;
   }
+
   if (estadoPedido === ESTADO_FETCH.ERROR) {
     return NOMBRE_INVALIDO;
   }
 
   return cita ? `${cita}` : NO_ENCONTRADO;
 };
-
-export const capitalize = (str: string): string => {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-export const getMinutosTranscurridos = (date: Date): string => {
-  const minutosTranscurridos = Math.floor((Date.now() - date.getTime()) / 60000);
-  return `Hace ${minutosTranscurridos} minutos`;
-} 
