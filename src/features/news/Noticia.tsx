@@ -5,6 +5,13 @@ interface Props {
   data: INoticiasNormalizadas
   onClick: () => void
 }
+
+/**
+ * @param {Object} data info de la noticia
+ * @param {Function} onClick función onClick del botón "Ver más" 
+ * @returns {JSX.Element} componente Noticia
+ */
+
 const Noticia = ({data, onClick}: Props) => {
   return (
     <TarjetaNoticia>

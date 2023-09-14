@@ -3,6 +3,11 @@ import { obtenerNoticias } from "../fakeRest";
 import { INoticiasNormalizadas } from "../Noticias";
 import { capitalize, getMinutosTranscurridos } from '../../../app/utils';
 
+/**
+ * Función que maneja el fetch de noticias
+ * @returns array de noticias normalizadas 
+ */
+
 export const obtenerInformacion = async (setNoticias: Dispatch<SetStateAction<INoticiasNormalizadas[]>>) => {
     const respuesta = await obtenerNoticias();
 

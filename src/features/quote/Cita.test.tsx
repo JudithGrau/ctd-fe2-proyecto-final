@@ -16,7 +16,7 @@ describe("Cita", () => {
 
     afterEach(() => {
     cleanup()
-    })
+    }) 
 
     it("Should render button 'Obtener cita aleatoria' and empty input by default",async () => {
         render(<Cita />)
